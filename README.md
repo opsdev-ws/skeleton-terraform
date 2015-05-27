@@ -13,7 +13,8 @@ List of modules included in this skeleton package.
 
 TODO: Add how to use steps here
 
-module "vpc" {
+module "vpc" 
+{
 	source = "./vpc"
 
 	stack_name = "stest"
@@ -23,4 +24,21 @@ module "vpc" {
 	private_sub_cidr = "10.0.1.0/24"
     access_key = "${var.access_key}"
     secret_key = "${var.secret_key}"
+}
+
+
+module "consul" 
+{
+	source = "./consul"
+
+	region = "us-east-1"
+	
+	access_key = "${var.access_key}"
+	secret_key = "${var.secret_key}"
+
+	key_name = "stest"
+	key_path = "~/Documents/keyfiles/stest.pem"
+
+	vpc_id = "vpc-679dad02"
+	subnet_id = "subnet-755ad35e"
 }
