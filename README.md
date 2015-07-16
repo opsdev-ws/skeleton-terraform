@@ -1,6 +1,6 @@
 ### --- Test list ---
 
-## --- Incuded Modules ---
+## --- Included Modules ---
 
 List of modules included in this skeleton package.
 * VPC
@@ -17,11 +17,11 @@ module "vpc"
 {
 	source = "./vpc"
 
-	stack_name = "stest"
-	region = "us-east-1"
-	vpc_cidr = "10.0.0.0/16"
-	public_sub_cidr = "10.0.0.0/24"
-	private_sub_cidr = "10.0.1.0/24"
+	stack_name = "__your prefix for the vpc__"
+	region = "__region to launch in__"
+	vpc_cidr = "__cidr of the vpc__"
+	public_sub_cidr = "__cidr of the public subnet created in the vpc__"
+	private_sub_cidr = "__cidr of the private subnet created in the vpc__"
     access_key = "${var.access_key}"
     secret_key = "${var.secret_key}"
 }
